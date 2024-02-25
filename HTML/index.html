@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <form action="">
+                <label for="" style="color: red;">SEARCH:</label>
+                <input type="text" value="Search here ...">
+                <input type="button" value="GO" id="nut">
+            </form>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">PRODUCT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </nav>
+        <header></header>
+        <article>  
+            <section>
+                <h2 style="text-align: center;">Introduction - Contact</h2>
+                <div class="tong">
+                    <div class="phan1">
+                        <p class="luidong">
+                            Flowering plants are plants which produce flowers as their reproductive structures. 
+                            They come in a great variety of shapes and sizes and include grasses, sedges, rushes, 
+                            many trees, as well as familiar plants like daffodils and daisies. Flowers often, though not 
+                            always, have brightly coloured petals. The flowers conceal inside them the female ovules which will be 
+                            fertilised by pollen grains. The pollen grains are the male parts of the flower. Fertilised ovules 
+                            develop into the seeds from which new plants will grow. The fact that the ovules are protected inside flowers 
+                            has contributed greatly to the success of flowering plants.
+                        </p>
+                    </div>
+                    <div class="phan2">
+                        <fieldset>
+                        <legend>Information</legend>
+                        <form action="" onsubmit="return validateForm()">
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email" placeholder="Your email"><br><br>
+        
+                            <label for="">Gender:</label><br>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="">Male</label>
+                            
+                            <input type='radio' id='female' name='gender' value='female'>
+                            <label for="">Female</label><br><br>
+        
+                            <input type='submit' value='Submit'>
+                            <input type='reset' value='Reset'>
+                            <span id="formError" class="error"></span>
+                        </form>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+            <aside>
+                <div class="anh">
+                    <p>flower</p>
+                    <img src="../IMG/Image20240225154939.jpg" alt="">
+                    <p>Flower Conference</p>
+                    <img src="../IMG/Image20240225154954.jpg" alt="">
+                    <p>Flower Pot</p>
+                    <img src="../IMG/Image20240225154957.jpg" alt="">
+                </div>
+            </aside>
+        </article>
+        <footer>21000505-Trương Công Anh vĩ</footer>
+    </div>
+    <script>
+        function validateForm() {
+            var nameValue = document.getElementById('name').value;
+            var emailValue = document.getElementById('email').value;
+            var genderMaleChecked = document.getElementById('male').checked;
+            var genderFemaleChecked = document.getElementById('female').checked;
+            var errorElement = document.getElementById('formError');
+
+            if (nameValue.trim() === '' || emailValue.trim() === '' || (!genderMaleChecked && !genderFemaleChecked)) {
+                errorElement.textContent = 'All fields are required.';
+                return false;
+            } else {
+                errorElement.textContent = '';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
